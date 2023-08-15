@@ -39,7 +39,7 @@ def work():
                 print(Fore.RED +s_time,i,'change:',c_change)
 
         if c_close > c_bbupper:
-            print(Fore.GREEN + s_time,i,'bbU:', round(c_close-c_bbupper,2))
+            print(Fore.CYAN + s_time,i,'bbU:', round(c_close-c_bbupper,2))
         if c_close < c_bblow:
             print(Fore.MAGENTA + s_time,i,'bbD:',round(c_close-c_bblow,2))
         # if c_range > vol_my_symbols[i]:
