@@ -33,7 +33,6 @@ def work():
         d_change = round(d_change, 2)
         d_vol = current_listD[i].indicators["volume"]
         per_vol = c_vol / d_vol
-        per_vol = round(per_vol, 2)
         work_list.append([i, per_vol, c_change, d_change])
 
 
@@ -41,7 +40,7 @@ def work():
     text = ''
     for i in range(15):
         title = work_list[i][0]
-        vol = str(work_list[i][1])
+        vol = str(round(work_list[i][1],3))
         c_change = work_list[i][2]
         d_change = work_list[i][3]
         c_change_str = str(work_list[i][2])
