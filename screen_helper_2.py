@@ -38,34 +38,24 @@ def work():
 
 
     work_list = sorted(work_list, key=lambda item: item[1], reverse=True)
-
+    text = ''
     for i in range(15):
         title = work_list[i][0]
-        vol = work_list[i][1]
+        vol = str(work_list[i][1])
         c_change = work_list[i][2]
         d_change = work_list[i][3]
-        print(
-            title if len(title) == 10 else title + " ",
-            "vol:",
-            vol,
-            'cc:',
-            Fore.YELLOW if c_change > 0 else Fore.RED,
-            c_change,
-            Fore.RESET,
-            'dc:',
-            Fore.YELLOW if d_change > 0 else Fore.RED,
-            d_change,
-            Fore.RESET
-        )
-    print()
-
-
-
-
+        c_change_str = str(work_list[i][2])
+        d_change_str = str(work_list[i][3])
+        title = title if len(title) == 10 else title + " "
+        c_color = Fore.YELLOW if c_change > 0 else Fore.RED
+        d_color = Fore.YELLOW if d_change > 0 else Fore.RED
+        text += title + " vol: " + vol + ' cc: ' + c_color + c_change_str + Fore.RESET+' dc: ' + d_color + d_change_str + Fore.RESET + '\n'
+    os.system('cls')
+    print(ctime(time()))    
+    print(text)
 
 while True:
-    for i in range(60):
-        print(ctime(time()))
-        work()
-        sleep(1)
-    os.system('cls')
+    work()
+    sleep(1)   
+
+

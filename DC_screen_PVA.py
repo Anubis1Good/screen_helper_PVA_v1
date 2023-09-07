@@ -30,13 +30,18 @@ def work():
     leaders = current_listD[:10]
     losers = current_listD[len(current_listD)-10:]
     losers = sorted(losers, key=lambda item: item[1])
-
+    text = ''
     for i in range(10):
-        print(Fore.YELLOW, leaders[i], Fore.RED, losers[i], Fore.RESET)
+        leader = str(leaders[i])
+        loser = str(losers[i])
+        text += Fore.YELLOW + leader + ' ' + Fore.RED + loser + Fore.RESET + '\n'
+    os.system('cls')
+    print(ctime(time()))
+    print(Fore.YELLOW + '------LEADERS------', Fore.RED + '------LOSERS------')
+    print(text)
 
 
 while True:
-    print(ctime(time()))
     work()
     sleep(30)
-    os.system('cls')
+
