@@ -32,7 +32,7 @@ def work():
         d_change = current_listD[i].indicators["change"]
         d_change = round(d_change, 2)
         d_vol = current_listD[i].indicators["volume"]
-        per_vol = c_vol / d_vol
+        per_vol = (c_vol / d_vol)*100
         work_list.append([i, per_vol, c_change, d_change])
 
 
